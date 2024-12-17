@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VK Data 3D Visualization</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <script type="module" src="../static/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Контейнер для 3D визуализации -->
+    <div id="3d-container"></div>
+
+    <!-- Индикатор загрузки -->
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+      Загрузка...
+    </div>
+
+    <!-- Панель кнопок -->
+    <div id="controls">
+      <button id="loadNodesBtn" class="btn green">Все узлы</button>
+      <button id="getNodesFromIdBtn" class="btn green">Узел по заданному ID</button>
+      <button id="createNodesBtn" class="btn green">Создать новый объект\связь</button>
+    </div>
+
+    <div id="modalNodeId" style="display: none;">
+        <div>
+          <label for="nodeIdInput">Введите ID узла:</label>
+          <input type="text" id="nodeIdInput">
+        </div>
+        <button id="submitNodeIdBtn">Ок</button>
+        <button id="cancelNodeIdBtn">Отмена</button>
+      </div>
+
+    <!-- Модальное окно для удаления узлов -->
+    <div id="deleteNodesModal" style="display: none;">
+      <div>
+        <label for="nodeIds">Enter Node IDs:</label>
+        <div id="nodeIdsContainer">
+          <li>
+            <!-- Контейнер для динамически добавляемых полей ввода -->
+            <input type="text" class="nodeIdsInput" placeholder="id node" />
+          </li>
+        </div>
+        <button id="addNodeBtn">+</button> <!-- Кнопка для добавления нового поля ввода -->
+        <button id="confirmDeleteNodesBtn">Удалить</button>
+        <button id="cancelDeleteNodesBtn">Отмена</button>
+      </div>
+    </div>
+
+    <div id="createNodesModal" style="display: none;">
+  <div>
+    <ul id="connectionList" style="list-style-type: none; padding-left: 0;">
+      <!-- Здесь будут добавляться связи -->
+
+    </ul>
+
+    <div class="button-container">
+      <button id="addConnectionBtn">Добавить связь</button> <!-- Добавить связь -->
+      <button id="addUserBtn">Добавить пользователя</button> <!-- Добавить пользователя -->
+      <button id="addGroupBtn">Добавить группу</button> <!-- Добавить группу -->
+    </div>
+
+    <button id="confirmCreateNodesBtn">Создать</button>
+    <button id="cancelCreateNodesBtn">Отменить</button>
+  </div>
+</div>
+
+    <!-- Модальное окно для создания узлов -->
+    <!-- Простой контейнер для отображения атрибутов узлов -->
+    <div id="nodeAttributes">
+      <h3>Атрибуты выбранного элемента</h3>
+      <!-- Здесь будут отображаться атрибуты -->
+    </div>
+  </div>
+</body>
+</html>
